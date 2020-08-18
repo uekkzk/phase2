@@ -15,3 +15,23 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.btn {
+  text-align: center;
+
+}
+
+
+.btn1 {
+  background-color: #5bc0de;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+}
+
+.btn2 {
+  background-color: #5cb85c;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+}
