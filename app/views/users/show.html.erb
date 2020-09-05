@@ -7,6 +7,13 @@
       <h4>name<%= @user.name %></h4>
       <h4>introduction
       <%= @user.introduction %></h4>
+      <p>follows<%= link_to "#{@user.follower.count}", followings_path(@user) %></p>
+      <p>followers<%= link_to "#{@user.followed.count}", followers_path(@user) %></p>
+      <p><% if current_user.following?(@user) %>
+        <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST, class: "btn btn-primary"%>
+      <% else %>
+        <%= link_to 'フォローする', follow_path(@user.id), method: :POST, class: "btn btn-success"%>
+      <% end %></p>
       <% if @user == current_user %>
       <%= link_to "編集",edit_user_path(@user.id), class: "btn btn-default" %>
       <% else %>
